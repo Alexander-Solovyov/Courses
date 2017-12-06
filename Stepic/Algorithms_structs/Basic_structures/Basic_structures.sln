@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brackets", "Brackets\Brackets.csproj", "{A69C09F0-DC72-4B20-B3F0-592B4EC4B3B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree_height", "Tree_height\Tree_height.csproj", "{389D8D5D-8F20-4517-8D90-C1B180C6F000}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A69C09F0-DC72-4B20-B3F0-592B4EC4B3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A69C09F0-DC72-4B20-B3F0-592B4EC4B3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A69C09F0-DC72-4B20-B3F0-592B4EC4B3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389D8D5D-8F20-4517-8D90-C1B180C6F000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389D8D5D-8F20-4517-8D90-C1B180C6F000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389D8D5D-8F20-4517-8D90-C1B180C6F000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389D8D5D-8F20-4517-8D90-C1B180C6F000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
