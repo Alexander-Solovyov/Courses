@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brackets", "Brackets\Bracke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree_height", "Tree_height\Tree_height.csproj", "{389D8D5D-8F20-4517-8D90-C1B180C6F000}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Package_Processing", "Package_Processing\Package_Processing.csproj", "{6572FF93-6117-4CBC-8925-60E10C1D0B06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{389D8D5D-8F20-4517-8D90-C1B180C6F000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{389D8D5D-8F20-4517-8D90-C1B180C6F000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{389D8D5D-8F20-4517-8D90-C1B180C6F000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6572FF93-6117-4CBC-8925-60E10C1D0B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6572FF93-6117-4CBC-8925-60E10C1D0B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6572FF93-6117-4CBC-8925-60E10C1D0B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6572FF93-6117-4CBC-8925-60E10C1D0B06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
