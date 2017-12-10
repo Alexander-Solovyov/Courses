@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Table_join", "Table_join\Table_join.csproj", "{D4654B01-4A36-44A0-B548-E088D8472FD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automatic_program_analysis", "Automatic_program_analysis\Automatic_program_analysis.csproj", "{898C02BF-7FF6-4BCA-8077-52170646A76B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D4654B01-4A36-44A0-B548-E088D8472FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4654B01-4A36-44A0-B548-E088D8472FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4654B01-4A36-44A0-B548-E088D8472FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898C02BF-7FF6-4BCA-8077-52170646A76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898C02BF-7FF6-4BCA-8077-52170646A76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898C02BF-7FF6-4BCA-8077-52170646A76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898C02BF-7FF6-4BCA-8077-52170646A76B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
