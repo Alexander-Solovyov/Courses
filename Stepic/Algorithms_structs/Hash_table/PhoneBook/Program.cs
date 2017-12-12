@@ -12,10 +12,10 @@ namespace PhoneBook
                 int modulus = 37633) // Picked random prime number
             {
                 if (modulus <= 0) throw new ArgumentOutOfRangeException(nameof(modulus));
-                _table = new List<Tuple<Key, Value>>[modulus];
+                _table = new LinkedList<Tuple<Key, Value>>[modulus];
                 for (var i = 0; i < modulus; ++i)
                 {
-                    _table[i] = new List<Tuple<Key, Value>>();
+                    _table[i] = new LinkedList<Tuple<Key, Value>>();
                 }
                 _hashFunction = hashFunction;
                 _modulus = modulus;
@@ -41,39 +41,37 @@ namespace PhoneBook
                 {
                     var hash = _hashFunction(key) % _modulus;
                     var pair = new Tuple<Key, Value>(key, value);
-                    for (var i = 0; i < _table[hash].Count; ++i)
+                    for (var iterator = _table[hash].First; iterator != null; iterator = iterator.Next)
                     {
-                        if (_table[hash][i].Item1.CompareTo(key) != 0) continue;
-                        _table[hash][i] = pair;
+                        if (iterator.Value.Item1.CompareTo(key) != 0) continue;
+                        iterator.Value = pair;
                         return;
                     }
-                    _table[hash].Add(pair);
+                    _table[hash].AddFirst(pair);
                 }
             }
 
             public void RemoveKey(Key key)
             {
                 var hash = _hashFunction(key) % _modulus;
-                var i = 0;
-                var size = _table[hash].Count;
-                for (; i < size; ++i)
+                var iterator = _table[hash].First;
+                for (; iterator != null; iterator = iterator.Next)
                 {
-                    if (_table[hash][i].Item1.CompareTo(key) == 0)
+                    if (iterator.Value.Item1.CompareTo(key) == 0)
                     {
                         break;
                     }
                 }
 
-                if (i == size)
+                if (iterator == null)
                 {
                     return;
                 }
 
-                _table[hash][i] = _table[hash][size - 1];
-                _table[hash].RemoveAt(size - 1);
+                _table[hash].Remove(iterator);
             }
 
-            private readonly List<Tuple<Key, Value>>[] _table;
+            private readonly LinkedList<Tuple<Key, Value>>[] _table;
             private readonly Func<Key, long> _hashFunction;
             private readonly int _modulus;
             private readonly Value _defaultValue;
