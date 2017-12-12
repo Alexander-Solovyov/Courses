@@ -5,24 +5,24 @@ namespace PhoneBook
 {
     class Program
     {
-        private class Map<Key, Value> where Key : IComparable<Key>
+        private class Map<TKey, TValue> where TKey : IComparable<TKey>
         {
-            public Map(Func<Key, long> hashFunction,
-                Value defaultValue = default(Value),
+            public Map(Func<TKey, long> hashFunction,
+                TValue defaultValue = default(TValue),
                 int modulus = 37633) // Picked random prime number
             {
                 if (modulus <= 0) throw new ArgumentOutOfRangeException(nameof(modulus));
-                _table = new LinkedList<Tuple<Key, Value>>[modulus];
+                _table = new LinkedList<Tuple<TKey, TValue>>[modulus];
                 for (var i = 0; i < modulus; ++i)
                 {
-                    _table[i] = new LinkedList<Tuple<Key, Value>>();
+                    _table[i] = new LinkedList<Tuple<TKey, TValue>>();
                 }
                 _hashFunction = hashFunction;
                 _modulus = modulus;
                 _defaultValue = defaultValue;
             }
 
-            public Value this[Key key]
+            public TValue this[TKey key]
             {
                 get
                 {
@@ -40,7 +40,7 @@ namespace PhoneBook
                 set
                 {
                     var hash = _hashFunction(key) % _modulus;
-                    var pair = new Tuple<Key, Value>(key, value);
+                    var pair = new Tuple<TKey, TValue>(key, value);
                     for (var iterator = _table[hash].First; iterator != null; iterator = iterator.Next)
                     {
                         if (iterator.Value.Item1.CompareTo(key) != 0) continue;
@@ -51,7 +51,7 @@ namespace PhoneBook
                 }
             }
 
-            public void RemoveKey(Key key)
+            public void RemoveKey(TKey key)
             {
                 var hash = _hashFunction(key) % _modulus;
                 var iterator = _table[hash].First;
@@ -71,10 +71,10 @@ namespace PhoneBook
                 _table[hash].Remove(iterator);
             }
 
-            private readonly LinkedList<Tuple<Key, Value>>[] _table;
-            private readonly Func<Key, long> _hashFunction;
+            private readonly LinkedList<Tuple<TKey, TValue>>[] _table;
+            private readonly Func<TKey, long> _hashFunction;
             private readonly int _modulus;
-            private readonly Value _defaultValue;
+            private readonly TValue _defaultValue;
         }
 
         static void Main(string[] args)
